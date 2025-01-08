@@ -8,6 +8,11 @@ const routes: Routes = [
     component: LayoutComponent,
     loadChildren: () => import("./home/home.module").then(m => m.HomeModule)
   },
+  {
+    path: "rxjs",
+    component: LayoutComponent,
+    loadChildren: () => import("./rxjs/rxjs.module").then(m => m.RxjsModule)
+  },
   { path: "**", redirectTo: "" }
 ];
 

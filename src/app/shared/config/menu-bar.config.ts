@@ -10,6 +10,12 @@ export const MENUBAR_CONFIG = [
     {
         title: "RxJS",
         url: "/rxjs",
+        subRoutes: [
+            {
+                title: "Of Operator",
+                url: "/rxjs/of-operator"
+            }
+        ]
     },
     {
         title: "NgRx",
