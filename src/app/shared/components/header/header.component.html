@@ -1,0 +1,19 @@
+<nav>
+    <ul>
+        <li *ngFor="let route of routes">
+            <a [href]="route.url">{{ route.title }}</a>
+            <ul *ngIf="route.subRoutes">
+                <ng-container *ngTemplateOutlet="renderMenu; context: { $implicit: route.subRoutes }"></ng-container>
+            </ul>
+        </li>
+    </ul>
+
+    <ng-template #renderMenu let-subRoutes>
+        <li *ngFor="let subRoute of subRoutes">
+            <a [href]="subRoute.url">{{ subRoute.title }}</a>
+            <ul *ngIf="subRoute.subRoutes">
+                <ng-container *ngTemplateOutlet="renderMenu; context: { $implicit: subRoute.subRoutes }"></ng-container>
+            </ul>
+        </li>
+    </ng-template>
+</nav>
